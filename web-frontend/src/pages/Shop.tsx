@@ -220,9 +220,9 @@ interface ShopPageProps {
 export default function ShopPage({
   products = DEMO_SHOP_PRODUCTS,
   categories = SHOP_CATEGORIES,
-  onViewProduct,
+  // onViewProduct,
   onAddToCart,
-  onOrderNow,
+  // onOrderNow,
 }: ShopPageProps) {
   const { addItem } = useCart();
   const navigate = useNavigate();

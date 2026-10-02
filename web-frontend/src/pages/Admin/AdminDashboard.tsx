@@ -123,67 +123,6 @@ const initialProducts: Product[] = [
   },
 ];
 
-const initialOrders: Order[] = [
-  {
-    id: "ORD-7841",
-    customer: "Anika Rahman",
-    phone: "01712-345678",
-    address: "House 12, Road 5, Block A, Gazipur Sadar",
-    items: [
-      { name: "Linen Wrap Shirt", qty: 1 },
-      { name: "Woven Tote Bag", qty: 1 },
-    ],
-    total: 2440,
-    payment: "Cash on Delivery",
-    status: "Pending",
-    placedAt: "2026-09-08 10:22",
-  },
-  {
-    id: "ORD-7840",
-    customer: "Tanvir Ahmed",
-    phone: "01898-221190",
-    address: "Flat 4B, Road 11, Dhanmondi, Dhaka",
-    items: [{ name: "Suede Ankle Boot", qty: 1 }],
-    total: 3200,
-    payment: "bKash",
-    status: "Processing",
-    placedAt: "2026-09-08 09:10",
-  },
-  {
-    id: "ORD-7839",
-    customer: "Meherun Nesa",
-    phone: "01611-908213",
-    address: "Sector 7, Uttara, Dhaka",
-    items: [{ name: "Ceramic Table Lamp", qty: 2 }],
-    total: 5300,
-    payment: "Card",
-    status: "On Hold",
-    placedAt: "2026-09-07 18:45",
-  },
-  {
-    id: "ORD-7838",
-    customer: "Rafiq Islam",
-    phone: "01533-774411",
-    address: "Chandra, Kaliakair, Gazipur",
-    items: [{ name: "Tailored Trousers", qty: 1 }],
-    total: 1800,
-    payment: "Nagad",
-    status: "Delivered",
-    placedAt: "2026-09-06 14:02",
-  },
-  {
-    id: "ORD-7837",
-    customer: "Sultana Begum",
-    phone: "01922-006677",
-    address: "Board Bazar, Gazipur",
-    items: [{ name: "Linen Wrap Shirt", qty: 2 }],
-    total: 2900,
-    payment: "Rocket",
-    status: "Cancelled",
-    placedAt: "2026-09-06 11:37",
-  },
-];
-
 // monthly sales
 const monthlySales: { month: string; sales: number }[] = [
   { month: "Apr", sales: 42000 },
@@ -365,7 +304,7 @@ function SalesChart({ data }: { data: { month: string; sales: number }[] }) {
           />
 
           <Tooltip
-            formatter={(value: number) => [currency(value), "Sales"]}
+            formatter={(value) => [currency(Number(value ?? 0)), "Sales"]}
             contentStyle={{
               background: T.card,
               border: `1px solid ${T.border}`,

@@ -69,7 +69,7 @@ interface NavbarProps {
   wishlistCount?: number;
   activeId?: string;
   onNavigate?: (id: string) => void;
-  onSearch?: () => void;
+  // onSearch?: () => void;
 }
 
 export default function Navbar({
@@ -78,9 +78,9 @@ export default function Navbar({
   wishlistCount = 0,
   activeId,
   onNavigate,
-  onSearch,
+  // onSearch,
 }: NavbarProps) {
-  const { openCart, totalItems } = useCart();
+  const { openCart } = useCart();
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileCategoriesOpen, setMobileCategoriesOpen] = useState(false);

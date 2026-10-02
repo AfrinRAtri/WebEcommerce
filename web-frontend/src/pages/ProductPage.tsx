@@ -10,7 +10,6 @@ import {
   Star,
   ShoppingBag,
   Zap,
-  Package,
   Truck,
   RotateCcw,
   ChevronDown,
@@ -89,6 +88,7 @@ export interface ProductSelection {
 export const DEMO_PRODUCT: ProductDetail = {
   id: "p1",
   name: "Floral Wrap Midi Dress",
+  image: "/images/Floral.jpg",
   category: "Women / Dresses",
   price: 85,
   originalPrice: 110,
@@ -285,6 +285,17 @@ export default function ProductDetails({
       )}
     </div>
   );
+}
+
+interface ProductGalleryProps {
+  images: string[];
+  productName: string;
+  discountPct: number | null;
+  activeIndex: number;
+  onSelectIndex: (index: number) => void;
+  onPrev: () => void;
+  onNext: () => void;
+  onOpenLightbox: () => void;
 }
 
 /* -------------------------------- Gallery -------------------------------- */

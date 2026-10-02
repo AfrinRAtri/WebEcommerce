@@ -39,7 +39,7 @@ export default function ProductDetails() {
         id: product.id,
         name: product.name,
         category: product.category,
-        image: product.image,
+        image: product.image ?? "",
         images: product.images ?? (product.image ? [product.image] : []),
         price: product.price,
         originalPrice: product.originalPrice,

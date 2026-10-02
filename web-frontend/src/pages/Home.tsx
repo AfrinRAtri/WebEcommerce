@@ -52,7 +52,7 @@ const IMAGES = {
   },
 };
 
-function useReveal(): [React.RefObject<HTMLDivElement>, boolean] {
+function useReveal(): [React.RefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
