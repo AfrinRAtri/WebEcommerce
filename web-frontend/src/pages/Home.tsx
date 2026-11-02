@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   Heart,
@@ -441,7 +441,8 @@ export default function Home() {
         </h2>
         <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-5">
           {categories.map((c) => (
-            <a key={c.name} href={c.href} className="group block">
+            // <a key={c.name} href={c.href} className="group block">
+            <Link key={c.name} to={c.href} className="group block">
               <ImageBox src={c.image} alt={c.name} ratio="aspect-[3/4]" />
               <div className="mt-3 flex items-center justify-between gap-1">
                 <div className="min-w-0">
@@ -463,7 +464,7 @@ export default function Home() {
                   className="shrink-0 text-[#CC5500] transition-transform group-hover:translate-x-1"
                 />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </Reveal>
